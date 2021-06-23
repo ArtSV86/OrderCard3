@@ -26,6 +26,4 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew test --info "-Dselenide.headless=true"
     - uses: actions/upload-artifact@v2
-      with:
-      name: Package
-      path: Artifacts
+     
