@@ -10,7 +10,7 @@ on:
     branches: [ master ]
 
 jobs:
-  build:
+  build: 
 
     runs-on: ubuntu-latest
 
@@ -25,3 +25,7 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew test --info "-Dselenide.headless=true"
+    - uses: actions/upload-artifact@v2
+      with:
+      name: Package
+      path: Artifacts
