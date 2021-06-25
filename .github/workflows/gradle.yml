@@ -10,6 +10,23 @@ on:
     branches: [ master ]
 
 jobs:
+image: Ubuntu
+
+stack: jdk 11
+
+branches:
+  only:
+    - master 
+
+build: off 
+
+install:
+  - java -jar ./artifacts/app-card-delivery.jar &
+
+build_script:
+  - chmod +x gradlew
+  - ./gradlew test --info "-Dselenide.headless=true"
+  
   build: 
      
      runs-on: ubuntu-latest
