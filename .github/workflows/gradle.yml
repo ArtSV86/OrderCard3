@@ -1,5 +1,6 @@
 # This workflow will build a Java project with Gradle
 # For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-gradle
+
 name: Java CI with Gradle
 
 on:
@@ -23,10 +24,9 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name:  Start SUT
-      run: java -jar ./artifacts/app-order.jar &
+      run: java -jar ./artifacts/app-card-delivery.jar &
     - name: Build with Gradle
-      run: /gradlew test --info "-Dselenide.headless=true"
-  
+      run: ./gradlew test --info '-Dselenide.headless=true'
   
      
      
